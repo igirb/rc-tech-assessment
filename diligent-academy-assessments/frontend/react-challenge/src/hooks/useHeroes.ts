@@ -13,8 +13,10 @@ export const useHeroes = () => {
             } catch (error) {
                 console.error(error);
             }
-        }
+        };
+
+        fetchHeroes();
     }, []);
 
-    return {heroes};
+    return heroes;
 }

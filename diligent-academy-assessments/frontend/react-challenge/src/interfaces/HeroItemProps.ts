@@ -1,6 +1,6 @@
 import {Hero} from "./Hero";
 
 export interface HeroItemProps {
-    Hero: Hero;
+    hero: Hero;
     onToggle: (id: number) => void;
 }
