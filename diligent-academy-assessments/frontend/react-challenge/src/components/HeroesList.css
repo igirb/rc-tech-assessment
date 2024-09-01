@@ -1,0 +1,48 @@
+@import url('https://fonts.cdnfonts.com/css/tt-backwards-sans-trial');
+
+html, body {
+    font-family: 'TT Backwards Sans Trial', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: scroll;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(#ffffff, #e4bef5);
+    color: #252525;
+}
+
+.hero-item {
+    display: inline-block;
+    padding: 2%;
+    margin: 1px 1px;
+    cursor: pointer;
+    list-style-type: decimal;
+}
+
+.hero-item:hover {
+    background-color: #cd7be5;
+}
+
+h1 {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+}
+
+h2 {
+    padding: 2%;
+}

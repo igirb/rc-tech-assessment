@@ -3,6 +3,7 @@ import { useHeroes } from '../hooks/useHeroes';
 import {HeroItem} from "./HeroItem";
 import Loading from "./Loading";
 import Error from "./Error";
+import './HeroesList.css';
 
 export const HeroesList: React.FC = () => {
     const { heroes, loading, error, toggleAvailability } = useHeroes();
