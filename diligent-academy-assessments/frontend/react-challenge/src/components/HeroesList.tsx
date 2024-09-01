@@ -3,7 +3,7 @@ import { useHeroes } from '../hooks/useHeroes';
 import {HeroItem} from "./HeroItem";
 import Loading from "./Loading";
 import Error from "./Error";
-import './HeroesList.css';
+import '../styles/HeroesList.css';
 
 export const HeroesList: React.FC = () => {
     const { heroes, loading, error, toggleAvailability } = useHeroes();
@@ -19,11 +19,11 @@ export const HeroesList: React.FC = () => {
     return (
         <div>
             <h2>Heroes</h2>
-            <ul>
+            <ol>
                 {heroes.map(hero => (
                     <HeroItem key={hero.id} hero={hero} onToggle={toggleAvailability}/>
                 ))}
-            </ul>
+            </ol>
         </div>
     );
 };
