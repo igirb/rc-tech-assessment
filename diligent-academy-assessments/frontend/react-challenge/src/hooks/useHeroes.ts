@@ -4,6 +4,8 @@ import {useEffect, useState} from "react";
 
 export const useHeroes = () => {
     const [heroes, setHeroes] = useState<Hero[]>([]);
+    const [loading, setLoading] = useState<boolean>(true);
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         const fetchHeroes = async () => {
@@ -11,12 +13,22 @@ export const useHeroes = () => {
                 const heroData = await callApi<Hero[]>('heroes');
                 setHeroes(heroData);
             } catch (error) {
-                console.error(error);
+                setError('Failed to fetch heroes: ' + error);
+            } finally {
+                setLoading(false);
             }
         };
 
         fetchHeroes();
     }, []);
 
-    return heroes;
+    const toggleAvailability = (id: number) => {
+        setHeroes(prevHeroes =>
+            prevHeroes.map(hero =>
+                hero.id === id ? { ...hero, available: !hero.available } : hero
+            )
+        );
+    };
+
+    return { heroes, loading, error, toggleAvailability };
 }
